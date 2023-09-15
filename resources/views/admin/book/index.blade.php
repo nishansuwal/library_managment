@@ -35,7 +35,10 @@
                             <td>{{ $book->author }}</td>
                             <td>{{ $book->publisher }}</td>
                             <td>{{ $book->category }}</td>
-                            
+                                <td>
+                                    <img src="{{ asset('/storage/' . $book->image) }}" alt="Post Image"
+                                        class="img-fluid post-image" width='200' height='200'>
+                                </td>
                             <td>
                                 <a class="btn btn-primary btn-action" href="{{ route('admin.book.edit', ['id' => $book->id]) }}">Edit</a>
                                 <form action="{{ route('admin.book.delete', ['id' => $book->id]) }}" method="POST">

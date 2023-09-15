@@ -4,9 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\User;
+use App\Models\Book;
 
-class UserSeeder extends Seeder
+
+class BookSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,16 +15,14 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $user=[
-            'name'=>'test',
-            'email'=>'test@gmail.com',
-            'password'=>bcrypt('1'),
-            'address'=>'test',
-            'address'=>'test',
-            'batch'=>'2075',
+            'title'=>'test',
+            'publisher'=>'programming',
+            'category'=>'test',
+            'author'=>'test',
             'image' => fake()->imageUrl(),
 
 
         ];
-        User::create($user);
+        Book::create($user);
     }
 }

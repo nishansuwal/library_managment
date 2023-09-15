@@ -56,8 +56,8 @@ class IssueController extends Controller
      */
     public function edit(string $id)
     {
-        $book = Issue::find($id);
-        return view('admin.book.edit')->with('book', $book);
+        $bookissue = Issue::find($id);
+        return view('admin.issue.edit')->with('bookissue', $bookissue);
     }
 
     /**
@@ -65,14 +65,16 @@ class IssueController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $book = Issue::find($id);
-        $book->title = $request->title;
-        $book->author = $request->author;
-        $book->publisher = $request->publisher;
-        $book->category = $request->category;
-        $savebook =  $book->save();
-        if($savebook) {
-            return redirect()->route('admin.book.index')->with('success', 'Data Is Sucessfully edit.');
+        $bookissue = Issue::find($id);
+        $bookissue->student_id = $request->student_id;
+        $bookissue->book_id = $request->book_id;
+        $bookissue->fine = $request->fine;
+        $bookissue->issue = $request->issue;
+        $bookissue->due = $request->due;
+        $bookissue->return = $request->return;
+        $savebookissue =  $bookissue->save();
+        if($savebookissue) {
+            return redirect()->route('admin.issue.index')->with('success', 'Data Is Sucessfully edit.');
         }
     }
 

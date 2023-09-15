@@ -20,10 +20,12 @@
                 <thead>
                     <tr>                        
                         <th>ID</th>
-                        <th>Title</th>
-                        <th>author</th>
-                        <th>publisher</th>
-                        <th>category</th>
+                        <th>Student_ID</th>
+                        <th>Book_ID</th>
+                        <th>Fine</th>
+                        <th>Issue date</th>
+                        <th>Due date</th>
+                        <th>Return date</th>
                         
                     </tr>
                 </thead>

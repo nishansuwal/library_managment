@@ -13,19 +13,20 @@
             </div>
         @endif
 
-        <h1>View books</h1>
+        <h1>View Student Details</h1>
 
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
-                    <tr>                        
+                    <tr>
                         <th>ID</th>
                         <th>name</th>
                         <th>email</th>
                         <th>address</th>
                         <th>batch</th>
                         <th>password</th>
-                        
+                        <th>Photo</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -37,9 +38,13 @@
                             <td>{{ $student->address }}</td>
                             <td>{{ $student->batch }}</td>
                             <td>{{ $student->password }}</td>
-                            
+                            {{-- <td>
+                                <img src="{{ asset('/storage/' . $user->image) }}" alt="Post Image"
+                                    class="img-fluid post-image" width='400' height='400'>
+                            </td> --}}
                             <td>
-                                <a class="btn btn-primary btn-action" href="{{ route('admin.student.edit', ['id' => $student->id]) }}">Edit</a>
+                                <a class="btn btn-primary btn-action"
+                                    href="{{ route('admin.student.edit', ['id' => $student->id]) }}">Edit</a>
                                 <form action="{{ route('admin.student.delete', ['id' => $student->id]) }}" method="POST">
                                     @csrf
                                     <button class="btn btn-danger btn-action">Delete</button>
@@ -53,5 +58,7 @@
     </div>
 
     <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-r-hO/bMWBp2iqokZzQJgPI6J7ApP5kAlFpQSO2wVXkI5hUTDQTrxBry8xqa+VwI3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-r-hO/bMWBp2iqokZzQJgPI6J7ApP5kAlFpQSO2wVXkI5hUTDQTrxBry8xqa+VwI3" crossorigin="anonymous">
+    </script>
 @endsection

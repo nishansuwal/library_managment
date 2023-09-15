@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('address');
             $table->string('batch');
+            $table->string('image');
             $table->rememberToken();
             $table->timestamps();
         });
